@@ -6,6 +6,7 @@ REPO_FULLNAME=$(jq -r ".repository.full_name" "$GITHUB_EVENT_PATH")
 
 echo "## Initializing git repo..."
 git init
+git config --global --add safe.directory /github/workspace
 echo "### Adding git remote..."
 git remote add origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 echo "### Getting branch"
@@ -16,7 +17,7 @@ echo "### Branch: $BRANCH (ref: $GITHUB_REF )"
 git checkout $BRANCH
 
 echo "## Configuring git author..."
-git config --global user.email "clang-format@1337z.ninja"
+git config --global user.email "clang-format@karaman.dev"
 git config --global user.name "Clang Format"
 
 # Ignore workflow files (we may not touch them)
