@@ -3,9 +3,6 @@
 This project can be used to run clang-format on every push using Github actions.
 
 ## Usage
-
-For a more detailed installation guide look [there](https://github.com/MarvinJWendt/run-node-formatter/wiki)
-
 Create a `formatter.yml` file in `.github/workflows/`.
 Paste this code into the file:
 
@@ -18,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Clang Code Formatter
-      uses: antoinealb/clang-format-action@clang9
+      uses: Mavrikant/clang-format-action@ubuntu-20.04
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
