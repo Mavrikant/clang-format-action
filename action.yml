@@ -1,12 +1,6 @@
-name: 'clang-format Code Formatter'
+name: 'clang-format Code Formatter with ubuntu20.04'
 description: 'Runs clang-format on your source code so your users do not have to'
-author: 'antoinealb'
-inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+author: 'mavrikant'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.myInput }}
